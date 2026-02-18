@@ -135,28 +135,7 @@ export default function HeroSection() {
                 </video>
               </div>
 
-              {/* Stats Card */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 sm:-bottom-8 sm:left-0 sm:translate-x-0 sm:-left-8 bg-white rounded-3xl shadow-xl p-5 sm:p-6 max-w-[220px] sm:max-w-[240px]">
-                <div className="text-center">
-                  <div className="text-4xl sm:text-5xl font-bold text-brand-purple mb-2">
-                    100<span className="text-brand-purple">+</span>
-                  </div>
-                  <div className="text-gray-700 font-semibold text-base sm:text-lg mb-3">
-                    Happy Learners
-                  </div>
-                  <div className="flex justify-center gap-1">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <svg
-                        key={star}
-                        className="w-4 sm:w-5 h-4 sm:h-5 text-yellow-400 fill-current"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                      </svg>
-                    ))}
-                  </div>
-                </div>
-              </div>
+
             </div>
           </ScrollElement>
         </div>

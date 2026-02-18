@@ -97,9 +97,13 @@ export default function Footer() {
           <ScrollElement direction="up" delay={0.1} viewport={{ amount: 0.2, once: true }}>
             <div className="col-span-2 md:col-span-3 lg:col-span-2">
               <Link href="/" className="inline-block mb-6">
-                <span className="text-2xl font-bold text-gray-900">
-                  Beta<span className="text-brand-purple">.</span>
-                </span>
+                <Image
+                  src="/images/Beta-Logo.svg"
+                  alt="Beta Education"
+                  width={100}
+                  height={100}
+                  className="w-20 h-20"
+                />
               </Link>
               <p className="text-gray-500 text-sm leading-relaxed mb-6 max-w-xs">
                 Building future-ready minds with AI education. Empowering students,
@@ -216,10 +220,10 @@ export default function Footer() {
                 Email
               </p>
               <a
-                href="mailto:hello@betaeducation.in"
+                href="mailto:contact@betaai.ai"
                 className="text-gray-900 hover:text-brand-purple transition-colors"
               >
-                hello@betaeducation.in
+                contact@betaai.ai
               </a>
             </div>
             <div>
@@ -227,17 +231,17 @@ export default function Footer() {
                 Phone
               </p>
               <a
-                href="tel:+919876543210"
+                href="tel:+919000129292"
                 className="text-gray-900 hover:text-brand-purple transition-colors"
               >
-                +91 98765 43210
+                +91 90001 29292
               </a>
             </div>
             <div>
               <p className="text-gray-400 text-xs uppercase tracking-wider mb-2">
                 Headquarters
               </p>
-              <p className="text-gray-900">Chennai, Tamil Nadu</p>
+              <p className="text-gray-900">Hyderabad, Telangana</p>
             </div>
             <div>
               <p className="text-gray-400 text-xs uppercase tracking-wider mb-2">
