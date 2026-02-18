@@ -3,7 +3,7 @@ import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
-  title: "Beta.it",
+  title: "Beta.ai",
   description: "AI education for schools, colleges, and learners",
 };
 
