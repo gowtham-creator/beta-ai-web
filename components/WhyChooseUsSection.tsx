@@ -144,8 +144,8 @@ export default function WhyChooseUsSection() {
                     <motion.div
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true, margin: "-100px" }}
-                      transition={{ duration: 0.5, delay: 0.3 }}
+                      viewport={{ once: true, margin: "0px" }}
+                      transition={{ duration: 0.4, delay: 0 }}
                       className="mb-4"
                     >
                       <span className="text-brand-purple/40 text-lg font-bold">
@@ -157,8 +157,8 @@ export default function WhyChooseUsSection() {
                     <motion.h3
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: "-100px" }}
-                      transition={{ duration: 0.5, delay: 0.4 }}
+                      viewport={{ once: true, margin: "0px" }}
+                      transition={{ duration: 0.4, delay: 0.1 }}
                       className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
                       style={isLargeScreen ? { color: titleColor } : {}}
                     >
@@ -169,8 +169,8 @@ export default function WhyChooseUsSection() {
                     <motion.p
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: "-100px" }}
-                      transition={{ duration: 0.5, delay: 0.5 }}
+                      viewport={{ once: true, margin: "0px" }}
+                      transition={{ duration: 0.4, delay: 0.15 }}
                       className="text-gray-600 text-lg sm:text-xl leading-relaxed max-w-xl"
                     >
                       {feature.description}
@@ -180,8 +180,8 @@ export default function WhyChooseUsSection() {
                     <motion.div
                       initial={{ scaleX: 0 }}
                       whileInView={{ scaleX: 1 }}
-                      viewport={{ once: true, margin: "-100px" }}
-                      transition={{ duration: 0.8, delay: 0.6 }}
+                      viewport={{ once: true, margin: "0px" }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
                       className="mt-8 h-1 w-24 origin-left"
                       style={{ background: `linear-gradient(to right, ${feature.color}, transparent)` }}
                     />
@@ -197,7 +197,7 @@ export default function WhyChooseUsSection() {
                   <motion.div
                     key={index}
                     className="absolute inset-0"
-                    initial={{ opacity: 0 }}
+                    initial={{ opacity: index === 0 ? 1 : 0, scale: index === 0 ? 1 : 0.95, y: index === 0 ? 0 : 20 }}
                     animate={{
                       opacity: activeIndex === index ? 1 : 0,
                       scale: activeIndex === index ? 1 : 0.95,

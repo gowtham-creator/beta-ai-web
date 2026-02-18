@@ -27,14 +27,14 @@ export default function ImpactSection() {
             <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-lime-300 rounded-full mix-blend-overlay filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
           </div>
 
-          <div className="relative z-20 p-8 sm:p-12 lg:p-20">
+          <div className="relative z-20 p-6 sm:p-10 lg:p-14">
             {/* Section Heading */}
             <ScrollElement direction="up" delay={0} viewport={{ amount: 0.3, once: true }}>
-              <div className="text-center mb-16 sm:mb-20 lg:mb-24">
+              <div className="text-center mb-10 sm:mb-12 lg:mb-14">
                 <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 italic text-orange-600">
-                  Impact That
+                  Transforming
                   <br />
-                  Speaks for Itself
+                  AI Education
                 </h2>
                 {/* Decorative Underline */}
                 <div className="flex justify-center mt-4">
@@ -49,87 +49,77 @@ export default function ImpactSection() {
               </div>
             </ScrollElement>
 
-            {/* Stats Grid with SVG Connectors */}
-            <div className="relative max-w-6xl mx-auto mb-20 sm:mb-24 lg:mb-32">
-              {/* Stats Cards */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-16 lg:gap-y-0 gap-x-8 lg:gap-x-4">
-                {/* Stat 1 - Top Left */}
-                <ScrollElement direction="up" delay={0.1} viewport={{ amount: 0.3, once: true }}>
-                  <div className="text-center space-y-3 relative">
-                    <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-brand-purple">
-                      590<span className="text-brand-purple">+</span>
-                    </div>
-                    <div className="text-base sm:text-lg font-semibold text-gray-900">
-                      Students trained
-                    </div>
-                    {/* Connector to Stat 2 - Desktop only */}
-                    <div className="hidden lg:block absolute -right-12 top-1/2 -translate-y-1/2">
-                      <Image
-                        src="/assets/stats-left.svg"
-                        alt=""
-                        width={100}
-                        height={80}
-                        className="w-20 xl:w-24 h-auto"
-                      />
-                    </div>
-                  </div>
-                </ScrollElement>
+            {/* Points Grid */}
+            <div className="relative max-w-5xl mx-auto mb-8 sm:mb-10 lg:mb-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                {[
+                  {
+                    num: "01",
+                    text: "Industry-Ready Curriculum",
+                    accent: "#7C3AED",
+                    icon: (
+                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0v6m0-6l-3.5 2M12 20l-9-5" />
+                      </svg>
+                    ),
+                    delay: 0.05,
+                  },
+                  {
+                    num: "02",
+                    text: "Hands-On AI Learning Experience",
+                    accent: "#0EA5E9",
+                    icon: (
+                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      </svg>
+                    ),
+                    delay: 0.1,
+                  },
+                  {
+                    num: "03",
+                    text: "Built for Institutions to be AI Ready.",
+                    accent: "#059669",
+                    icon: (
+                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                      </svg>
+                    ),
+                    delay: 0.15,
+                  },
+                  {
+                    num: "04",
+                    text: "Scalable AI Programs",
+                    accent: "#EA580C",
+                    icon: (
+                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                      </svg>
+                    ),
+                    delay: 0.2,
+                  },
+                ].map((item) => (
+                  <ScrollElement key={item.num} direction="up" delay={item.delay} viewport={{ amount: 0.2, once: true }}>
+                    <div className="group relative overflow-hidden rounded-3xl bg-white/50 backdrop-blur-md border border-white/70 p-6 shadow-xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-500">
+                      {/* Top accent bar */}
+                      <div className="absolute top-0 left-0 right-0 h-1 rounded-t-3xl" style={{ background: item.accent }} />
 
-                {/* Stat 2 - Bottom (mobile) / Top (desktop) */}
-                <ScrollElement direction="up" delay={0.2} viewport={{ amount: 0.3, once: true }}>
-                  <div className="text-center space-y-3 relative lg:pt-20">
-                    <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-brand-purple">
-                      20<span className="text-brand-purple">+</span>
-                    </div>
-                    <div className="text-base sm:text-lg font-semibold text-gray-900">
-                      Schools partnered
-                    </div>
-                    {/* Connector to Stat 3 - Desktop only */}
-                    <div className="hidden lg:block absolute -right-12 top-1/2 -translate-y-1/2">
-                      <Image
-                        src="/assets/stats-right.svg"
-                        alt=""
-                        width={100}
-                        height={80}
-                        className="w-20 xl:w-24 h-auto"
-                      />
-                    </div>
-                  </div>
-                </ScrollElement>
+                      {/* Ghost number */}
+                      <span className="absolute -right-3 -bottom-4 text-[5rem] font-black leading-none select-none pointer-events-none" style={{ color: `${item.accent}12` }}>
+                        {item.num}
+                      </span>
 
-                {/* Stat 3 - Top Right */}
-                <ScrollElement direction="up" delay={0.3} viewport={{ amount: 0.3, once: true }}>
-                  <div className="text-center space-y-3 relative">
-                    <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-brand-purple">
-                      10<span className="text-brand-purple">+</span>
-                    </div>
-                    <div className="text-base sm:text-lg font-semibold text-gray-900">
-                      Colleges onboarded
-                    </div>
-                    {/* Connector to Stat 4 - Desktop only */}
-                    <div className="hidden lg:block absolute -right-12 top-1/2 -translate-y-1/2">
-                      <Image
-                        src="/assets/stats-left.svg"
-                        alt=""
-                        width={100}
-                        height={80}
-                        className="w-20 xl:w-24 h-auto"
-                      />
-                    </div>
-                  </div>
-                </ScrollElement>
+                      {/* Icon badge */}
+                      <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transition-transform duration-300" style={{ background: item.accent }}>
+                        {item.icon}
+                      </div>
 
-                {/* Stat 4 - Bottom Right (mobile) / Top (desktop) */}
-                <ScrollElement direction="up" delay={0.4} viewport={{ amount: 0.3, once: true }}>
-                  <div className="text-center space-y-3 relative lg:pt-20">
-                    <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-brand-purple">
-                      52<span className="text-brand-purple">+</span>
+                      {/* Text */}
+                      <p className="text-xl sm:text-2xl font-black text-gray-900 leading-tight relative z-10">
+                        {item.text}
+                      </p>
                     </div>
-                    <div className="text-base sm:text-lg font-semibold text-gray-900">
-                      AI Centres active
-                    </div>
-                  </div>
-                </ScrollElement>
+                  </ScrollElement>
+                ))}
               </div>
             </div>
           </div>

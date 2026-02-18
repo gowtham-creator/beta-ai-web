@@ -203,7 +203,7 @@ export default function TestimonialsSection() {
   const currentCaseStudy = caseStudies[activeTab as keyof typeof caseStudies];
 
   return (
-    <section ref={sectionRef} className="relative py-20 lg:py-32 px-4 sm:px-6 overflow-hidden">
+    <section ref={sectionRef} className="relative py-10 lg:py-16 px-4 sm:px-6 overflow-hidden">
       {/* Background Assets */}
       <BgDecorations
         items={[

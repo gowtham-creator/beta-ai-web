@@ -150,7 +150,7 @@ export default function ProgramsSection() {
   };
 
   return (
-    <section ref={sectionRef} className="relative py-20 lg:py-32 px-4 sm:px-6 overflow-hidden">
+    <section ref={sectionRef} className="relative py-10 lg:py-16 px-4 sm:px-6 overflow-hidden">
       {/* Background Assets */}
       <BgDecorations
         items={[
@@ -459,30 +459,6 @@ export default function ProgramsSection() {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Bottom Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
-          {[
-            { value: "4+", label: "Programs" },
-            { value: "50+", label: "Workshops conducted" },
-            { value: "200+", label: "Teachers trained" },
-            { value: "95%", label: "Satisfaction rate" },
-          ].map((stat, index) => (
-            <ScrollElement
-              key={index}
-              direction="up"
-              delay={index * 0.1}
-              viewport={{ amount: 0.3, once: true }}
-            >
-              <div className="text-center p-6 rounded-2xl bg-white border border-slate-200">
-                <div className="text-3xl lg:text-4xl font-bold text-brand-purple mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-gray-500 text-sm">{stat.label}</div>
-              </div>
-            </ScrollElement>
-          ))}
         </div>
       </div>
     </section>
