@@ -391,25 +391,6 @@ export default function TestimonialsSection() {
                     </p>
                   </motion.div>
                 </div>
-
-                {/* Stats */}
-                <motion.div
-                  className="mt-8 pt-8 border-t border-gray-100"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.4 }}
-                >
-                  <div className="flex flex-wrap justify-center gap-8 lg:gap-16">
-                    {currentCaseStudy.stats.map((stat, index) => (
-                      <div key={index} className="text-center">
-                        <div className="text-3xl lg:text-4xl font-bold text-brand-purple mb-1">
-                          {stat.value}
-                        </div>
-                        <div className="text-gray-500 text-sm">{stat.label}</div>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
               </div>
             </div>
           </motion.div>
@@ -421,7 +402,7 @@ export default function TestimonialsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-12 lg:mt-16 text-center"
+          className="mt-8 lg:mt-10 text-center"
         >
           <p className="text-gray-500 mb-6">
             Ready to write your own success story?

@@ -188,7 +188,7 @@ export default function CTASection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-24 lg:py-40 px-4 sm:px-6 overflow-hidden"
+      className="relative pt-24 lg:pt-40 pb-12 lg:pb-16 px-4 sm:px-6 overflow-hidden"
     >
       {/* Background Assets */}
       <BgDecorations
@@ -258,26 +258,15 @@ export default function CTASection() {
             <MagneticButton variant="secondary">Download Curriculum Overview</MagneticButton>
           </div>
 
-          {/* Trust Indicators */}
+          {/* Quote */}
           <ScrollElement direction="up" delay={0.3} viewport={{ amount: 0.5, once: true }}>
-            <div className="mt-16 pt-12 border-t border-slate-200">
-              <p className="text-gray-400 text-sm mb-6">Trusted by leading institutions</p>
-              <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12">
-                {[
-                  "DPS Schools",
-                  "Ryan International",
-                  "Kendriya Vidyalaya",
-                  "VIT University",
-                  "SRM Institute",
-                ].map((name, index) => (
-                  <span
-                    key={index}
-                    className="text-gray-400 text-sm lg:text-base font-medium hover:text-gray-600 transition-colors cursor-default"
-                  >
-                    {name}
-                  </span>
-                ))}
-              </div>
+            <div className="mt-16 pt-12 pb-8 border-t border-slate-200 max-w-2xl mx-auto text-center">
+              <p className="text-xl lg:text-2xl text-gray-700 italic leading-relaxed mb-4">
+                &ldquo;AI won&apos;t replace humans. But humans who use AI will replace those who don&apos;t&rdquo;
+              </p>
+              <p className="text-brand-purple font-semibold">
+                — Sam Altman, <span className="text-gray-500 font-normal">Founder of OpenAI</span>
+              </p>
             </div>
           </ScrollElement>
         </div>
