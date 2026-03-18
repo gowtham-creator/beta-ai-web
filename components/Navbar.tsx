@@ -1,13 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const navLinks = [
     { label: "Home", href: "/" },
@@ -23,9 +30,12 @@ export default function Navbar() {
   };
 
   return (
-    <header className="relative z-50">
+    <>
+      {/* Spacer to prevent content from going under the fixed header */}
+      <div className="h-[88px] sm:h-[104px] w-full" />
+      <header className={`fixed top-0 left-0 right-0 w-full z-[100] transition-all duration-300 ${scrolled ? "bg-transparent backdrop-blur-none" : "bg-white/80 backdrop-blur-md"}`}>
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 py-4 sm:py-6">
-        <div className="bg-white rounded-full px-4 sm:px-8 py-3 sm:py-4 flex items-center justify-between border border-slate-200 shadow-sm">
+        <div className={`rounded-full px-4 sm:px-8 py-3 sm:py-4 flex items-center justify-between transition-all duration-300 ${scrolled ? "bg-white/30 backdrop-blur-md border border-white/40 shadow-lg" : "bg-white border border-slate-200 shadow-sm"}`}>
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 sm:gap-3">
             <Image
@@ -44,9 +54,9 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative font-medium transition-colors pb-1 ${isActive(link.href)
-                  ? "text-gray-900"
-                  : "text-gray-600 hover:text-gray-900"
+                className={`relative font-semibold transition-colors pb-1 ${isActive(link.href)
+                  ? "text-black"
+                  : "text-gray-800 hover:text-black"
                   }`}
               >
                 {link.label}
@@ -157,5 +167,6 @@ export default function Navbar() {
         />
       )}
     </header>
+    </>
   );
 }
