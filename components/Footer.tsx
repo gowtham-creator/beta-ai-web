@@ -100,9 +100,9 @@ export default function Footer() {
                 <Image
                   src="/images/Beta-Logo.svg"
                   alt="Beta Education"
-                  width={100}
-                  height={100}
-                  className="w-20 h-20"
+                  width={120}
+                  height={120}
+                  className="w-28 h-28"
                 />
               </Link>
               <p className="text-gray-500 text-sm leading-relaxed mb-6 max-w-xs">

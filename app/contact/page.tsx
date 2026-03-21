@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
+import CanvasCaptcha, { CanvasCaptchaRef } from "@/components/CanvasCaptcha";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "@/components/Navbar";
@@ -81,7 +81,7 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [captchaError, setCaptchaError] = useState(false);
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const captchaRef = useRef<CanvasCaptchaRef>(null);
 
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -90,9 +90,9 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validate reCAPTCHA
-    const recaptchaValue = recaptchaRef.current?.getValue();
-    if (!recaptchaValue) {
+    // Validate captcha
+    const captchaValue = captchaRef.current?.getValue();
+    if (!captchaValue) {
       setCaptchaError(true);
       return;
     }
@@ -113,7 +113,7 @@ export default function ContactPage() {
       );
       setSubmitStatus("success");
       setFormData({ name: "", organization: "", role: "", interest: "" });
-      recaptchaRef.current?.reset();
+      captchaRef.current?.reset();
     } catch {
       setSubmitStatus("error");
     } finally {
@@ -352,15 +352,14 @@ export default function ContactPage() {
               />
             </div>
 
-            {/* reCAPTCHA */}
+            {/* Canvas Captcha */}
             <div>
-              <ReCAPTCHA
-                ref={recaptchaRef}
-                sitekey="6Ldqb3EsAAAAABNTR6dNppXTxJwN82ujbbDiLoie"
+              <CanvasCaptcha
+                ref={captchaRef}
                 onChange={() => setCaptchaError(false)}
               />
               {captchaError && (
-                <p className="text-red-500 text-sm mt-2">Please complete the reCAPTCHA verification.</p>
+                <p className="text-red-500 text-sm mt-2">Please complete the captcha verification.</p>
               )}
             </div>
 
